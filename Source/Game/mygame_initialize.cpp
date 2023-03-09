@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "../Core/Resource.h"
 #include <mmsystem.h>
 #include <ddraw.h>
@@ -9,7 +9,7 @@
 
 using namespace game_framework;
 /////////////////////////////////////////////////////////////////////////////
-// ³o­Óclass¬°¹CÀ¸ªº¹CÀ¸¶}ÀYµe­±ª«¥ó
+// é€™å€‹classç‚ºéŠæˆ²çš„éŠæˆ²åŸ·è¡Œç‰©ä»¶ï¼Œä¸»è¦çš„éŠæˆ²ç¨‹å¼éƒ½åœ¨é€™è£¡
 /////////////////////////////////////////////////////////////////////////////
 
 CGameStateInit::CGameStateInit(CGame *g) : CGameState(g)
@@ -20,10 +20,10 @@ CGameStateInit::CGameStateInit(CGame *g) : CGameState(g)
 void CGameStateInit::OnInit()
 {
 	//
-	// ·í¹Ï«Ü¦h®É¡AOnInit¸ü¤J©Ò¦³ªº¹Ï­nªá«Ü¦h®É¶¡¡C¬°Á×§Kª±¹CÀ¸ªº¤H
-	//     µ¥ªº¤£­@·Ğ¡A¹CÀ¸·|¥X²{¡uLoading ...¡v¡AÅã¥ÜLoadingªº¶i«×¡C
+	// ç•¶åœ–å¾ˆå¤šæ™‚ï¼ŒOnInitè¼‰å…¥æ‰€æœ‰çš„åœ–è¦èŠ±å¾ˆå¤šæ™‚é–“ã€‚ç‚ºé¿å…ç©éŠæˆ²çš„äºº
+	//     ç­‰çš„ä¸è€ç…©ï¼ŒéŠæˆ²æœƒå‡ºç¾ã€ŒLoading ...ã€ï¼Œé¡¯ç¤ºLoadingçš„é€²åº¦ã€‚
 	//
-	ShowInitProgress(0, "Start Initialize...");	// ¤@¶}©lªºloading¶i«×¬°0%
+	ShowInitProgress(0, "Start Initialize...");	// ä¸€é–‹å§‹çš„loadingé€²åº¦ç‚º0%
 	Sleep(200);
 
 	load_background();
@@ -31,7 +31,7 @@ void CGameStateInit::OnInit()
 	ShowInitProgress(66, "Initialize...");
 	Sleep(200);
 	//
-	// ¦¹OnInit°Ê§@·|±µ¨ìCGameStaterRun::OnInit()¡A©Ò¥H¶i«×ÁÙ¨S¨ì100%
+	// æ­¤OnInitå‹•ä½œæœƒæ¥åˆ°CGameStaterRun::OnInit()ï¼Œæ‰€ä»¥é€²åº¦é‚„æ²’åˆ°100%
 	//
 }
 
@@ -42,7 +42,7 @@ void CGameStateInit::OnBeginState()
 
 void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	GotoGameState(GAME_STATE_RUN);		// ¤Á´«¦ÜGAME_STATE_RUN
+	GotoGameState(GAME_STATE_RUN);		// åˆ‡æ›è‡³GAME_STATE_RUN
 }
 
 void CGameStateInit::OnLButtonDown(UINT nFlags, CPoint point)
@@ -65,11 +65,11 @@ void CGameStateInit::draw_text() {
 	CFont* fp;
 
 	/* Print title */
-	CTextDraw::ChangeFontLog(pDC, fp, 36, "·L³n¥¿¶ÂÅé", RGB(255, 255, 255));
+	CTextDraw::ChangeFontLog(pDC, fp, 36, "ç¨¬ç¡ã‚¿å µç °", RGB(255, 255, 255));
 	CTextDraw::Print(pDC, 79, 228, "Game Framework Practice");
 
 	/* Print info */
-	CTextDraw::ChangeFontLog(pDC, fp, 24, "·L³n¥¿¶ÂÅé", RGB(255, 255, 255));
+	CTextDraw::ChangeFontLog(pDC, fp, 24, "ç¨¬ç¡ã‚¿å µç °", RGB(255, 255, 255));
 	CTextDraw::Print(pDC, 182, 431, "Press any key to start");
 
 	CDDraw::ReleaseBackCDC();
