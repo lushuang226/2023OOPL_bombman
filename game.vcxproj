@@ -101,16 +101,18 @@
       <MinimalRebuild>true</MinimalRebuild>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>.\Debug/game.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
       <ObjectFileName>.\Debug/</ObjectFileName>
       <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -157,8 +159,9 @@
       <ObjectFileName>.\Release/</ObjectFileName>
       <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -203,9 +206,11 @@
       <ObjectFileName>.\UnitTest/</ObjectFileName>
       <ProgramDataBaseFileName>.\UnitTest/</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -228,39 +233,255 @@
       <OutputFile>.\UnitTest/game.bsc</OutputFile>
     </Bscmake>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <None Include="RES\GAME.RC2" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Source\Core\game.cpp" />
-    <ClCompile Include="Source\Core\gameDoc.cpp" />
-    <ClCompile Include="Source\Core\gameView.cpp" />
-    <ClCompile Include="Source\Core\MainFrm.cpp" />
-    <ClCompile Include="Source\Core\StdAfx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <ClCompile>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
-    <ClCompile Include="Source\Game\mygame_initialize.cpp" />
-    <ClCompile Include="Source\Game\mygame_over.cpp" />
-    <ClCompile Include="Source\Game\mygame_run.cpp" />
-    <ClCompile Include="Source\Library\audio.cpp" />
-    <ClCompile Include="Source\Library\gamecore.cpp" />
-    <ClCompile Include="Source\Library\gameutil.cpp" />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="Res\ball.bmp" />
+    <None Include="RES\bmp0.bmp" />
+    <None Include="RES\bmp1.bmp" />
+    <None Include="RES\bmp10.bmp" />
+    <None Include="RES\bmp2.bmp" />
+    <None Include="RES\bmp3.bmp" />
+    <None Include="RES\bmp4.bmp" />
+    <None Include="RES\bmp5.bmp" />
+    <None Include="RES\bmp6.bmp" />
+    <None Include="RES\bmp7.bmp" />
+    <None Include="RES\bmp8.bmp" />
+    <None Include="RES\bmp9.bmp" />
+    <None Include="RES\center.bmp" />
+    <None Include="RES\continue.bmp" />
+    <None Include="Res\corner.bmp" />
+    <None Include="RES\eraser1.bmp" />
+    <None Include="RES\eraser2.bmp" />
+    <None Include="RES\eraser3.bmp" />
+    <None Include="res\game.ico" />
+    <None Include="res\game.rc2" />
+    <None Include="RES\gamecurs.cur" />
+    <None Include="res\gameDoc.ico" />
+    <None Include="RES\help.bmp" />
+    <None Include="RES\loading.bmp" />
+    <None Include="RES\ntutcsie.bmp" />
+    <None Include="res\Toolbar.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Core\Game.h" />
-    <ClInclude Include="Source\Core\gameDoc.h" />
-    <ClInclude Include="Source\Core\gameView.h" />
-    <ClInclude Include="Source\Core\MainFrm.h" />
-    <ClInclude Include="Source\Core\Resource.h" />
-    <ClInclude Include="Source\Core\StdAfx.h" />
-    <ClInclude Include="Source\Game\config.h" />
-    <ClInclude Include="Source\Game\mygame.h" />
-    <ClInclude Include="Source\Library\audio.h" />
-    <ClInclude Include="Source\Library\gamecore.h" />
-    <ClInclude Include="Source\Library\gameutil.h" />
+    <ClCompile Include="Source\audio.cpp" />
+    <ClCompile Include="Source\CBomb.cpp" />
+    <ClCompile Include="Source\CESWall.cpp" />
+    <ClCompile Include="Source\CGMap.cpp" />
+    <ClCompile Include="Source\CMenu.cpp" />
+    <ClCompile Include="Source\CMonster.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="Source\CPlayer.cpp" />
+    <ClCompile Include="Source\CProps.cpp" />
+    <ClCompile Include="Source\game.cpp">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="Source\gameDoc.cpp">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="Source\gameView.cpp">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="Source\MainFrm.cpp">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="Source\StdAfx.cpp">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\gamelib.cpp">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">UnitTest/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">UnitTest/</ProgramDataBaseFileName>
+    </ClCompile>
+    <ClCompile Include="Source\mygame.cpp">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Source\Core\game.rc" />
+    <ClInclude Include="Source\audio.h" />
+    <ClInclude Include="Source\CBomb.h" />
+    <ClInclude Include="Source\CESWall.h" />
+    <ClInclude Include="Source\CGMap.h" />
+    <ClInclude Include="Source\CMenu.h" />
+    <ClInclude Include="Source\CMonster.h" />
+    <ClInclude Include="Source\CPlayer.h" />
+    <ClInclude Include="Source\CProps.h" />
+    <ClInclude Include="Source\game.h" />
+    <ClInclude Include="Source\gameDoc.h" />
+    <ClInclude Include="Source\gameView.h" />
+    <ClInclude Include="Source\MainFrm.h" />
+    <ClInclude Include="Source\Resource.h" />
+    <ClInclude Include="Source\StdAfx.h" />
+    <ClInclude Include="Source\gamelib.h" />
+    <ClInclude Include="Source\mygame.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Source\game.rc">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="C:\Users\LIN\Desktop\屏幕截图-2021-04-08-164449.bmp" />
+    <Image Include="RES\about.bmp" />
+    <Image Include="RES\ABOUTUS.bmp" />
+    <Image Include="res\bitmap5.bmp" />
+    <Image Include="res\bomb1.bmp" />
+    <Image Include="res\bomb2.bmp" />
+    <Image Include="res\bomb3.bmp" />
+    <Image Include="res\bomb4.bmp" />
+    <Image Include="RES\bombnum.bmp" />
+    <Image Include="RES\bombpow.bmp" />
+    <Image Include="RES\bonus.bmp" />
+    <Image Include="RES\control.bmp" />
+    <Image Include="RES\crossbomb.bmp" />
+    <Image Include="RES\crosswall.bmp" />
+    <Image Include="RES\door.bmp" />
+    <Image Include="RES\enemy.bmp" />
+    <Image Include="RES\enemy1.bmp" />
+    <Image Include="RES\enemy11.bmp" />
+    <Image Include="RES\enemy12.bmp" />
+    <Image Include="RES\enemy13.bmp" />
+    <Image Include="RES\enemy14.bmp" />
+    <Image Include="RES\enemy15.bmp" />
+    <Image Include="RES\enemy16.bmp" />
+    <Image Include="RES\enemy17.bmp" />
+    <Image Include="RES\enemy18.bmp" />
+    <Image Include="RES\enemy19.bmp" />
+    <Image Include="RES\enemy2.bmp" />
+    <Image Include="RES\enemy21.bmp" />
+    <Image Include="RES\enemy22.bmp" />
+    <Image Include="RES\enemy23.bmp" />
+    <Image Include="RES\enemy24.bmp" />
+    <Image Include="RES\enemy25.bmp" />
+    <Image Include="RES\enemy26.bmp" />
+    <Image Include="RES\enemy27.bmp" />
+    <Image Include="RES\enemy28.bmp" />
+    <Image Include="RES\enemy29.bmp" />
+    <Image Include="RES\enemy3.bmp" />
+    <Image Include="RES\enemy31.bmp" />
+    <Image Include="RES\enemy32.bmp" />
+    <Image Include="RES\enemy33.bmp" />
+    <Image Include="RES\enemy34.bmp" />
+    <Image Include="RES\enemy35.bmp" />
+    <Image Include="RES\enemy36.bmp" />
+    <Image Include="RES\enemy37.bmp" />
+    <Image Include="RES\enemy38.bmp" />
+    <Image Include="RES\enemy39.bmp" />
+    <Image Include="RES\enemy4.bmp" />
+    <Image Include="RES\enemy5.bmp" />
+    <Image Include="RES\enemy6.bmp" />
+    <Image Include="RES\enemy7.bmp" />
+    <Image Include="RES\enemy8.bmp" />
+    <Image Include="RES\enemy9.bmp" />
+    <Image Include="RES\eswall.bmp" />
+    <Image Include="res\eswall1.bmp" />
+    <Image Include="RES\eswall2.bmp" />
+    <Image Include="RES\eswall3.bmp" />
+    <Image Include="RES\eswall4.bmp" />
+    <Image Include="RES\eswall5.bmp" />
+    <Image Include="RES\explode1.bmp" />
+    <Image Include="RES\explode2.bmp" />
+    <Image Include="RES\explode3.bmp" />
+    <Image Include="RES\explode4.bmp" />
+    <Image Include="RES\fireD1.bmp" />
+    <Image Include="RES\fireD2.bmp" />
+    <Image Include="RES\fireD3.bmp" />
+    <Image Include="RES\fireD4.bmp" />
+    <Image Include="RES\fireL1.bmp" />
+    <Image Include="RES\fireL2.bmp" />
+    <Image Include="RES\fireL3.bmp" />
+    <Image Include="RES\fireL4.bmp" />
+    <Image Include="RES\fireLR1.bmp" />
+    <Image Include="RES\fireLR2.bmp" />
+    <Image Include="RES\fireLR3.bmp" />
+    <Image Include="RES\fireLR4.bmp" />
+    <Image Include="RES\fireR1.bmp" />
+    <Image Include="RES\fireR2.bmp" />
+    <Image Include="RES\fireR3.bmp" />
+    <Image Include="RES\fireR4.bmp" />
+    <Image Include="RES\fireU1.bmp" />
+    <Image Include="RES\fireU2.bmp" />
+    <Image Include="RES\fireU3.bmp" />
+    <Image Include="RES\fireU4.bmp" />
+    <Image Include="RES\fireUD1.bmp" />
+    <Image Include="RES\fireUD2.bmp" />
+    <Image Include="RES\fireUD3.bmp" />
+    <Image Include="RES\fireUD4.bmp" />
+    <Image Include="RES\gameover.bmp" />
+    <Image Include="RES\green.bmp" />
+    <Image Include="RES\HOWTOPLAY.bmp" />
+    <Image Include="RES\left.bmp" />
+    <Image Include="RES\level1.bmp" />
+    <Image Include="RES\level10.bmp" />
+    <Image Include="RES\level11.bmp" />
+    <Image Include="RES\level12.bmp" />
+    <Image Include="RES\level2.bmp" />
+    <Image Include="RES\level3.bmp" />
+    <Image Include="RES\level4.bmp" />
+    <Image Include="RES\level5.bmp" />
+    <Image Include="RES\level6.bmp" />
+    <Image Include="RES\level7.bmp" />
+    <Image Include="RES\level8.bmp" />
+    <Image Include="RES\level9.bmp" />
+    <Image Include="RES\missall.bmp" />
+    <Image Include="RES\missfire.bmp" />
+    <Image Include="RES\mouse.bmp" />
+    <Image Include="RES\pass.bmp" />
+    <Image Include="RES\playd1.bmp" />
+    <Image Include="RES\playd2.bmp" />
+    <Image Include="RES\playd3.bmp" />
+    <Image Include="RES\playd4.bmp" />
+    <Image Include="RES\playerDead1.bmp" />
+    <Image Include="RES\playerDead2.bmp" />
+    <Image Include="RES\playerDead3.bmp" />
+    <Image Include="RES\playerDead4.bmp" />
+    <Image Include="RES\playerDead5.bmp" />
+    <Image Include="RES\playerDead6.bmp" />
+    <Image Include="RES\playerDead7.bmp" />
+    <Image Include="RES\playl1.bmp" />
+    <Image Include="RES\playl2.bmp" />
+    <Image Include="RES\playl3.bmp" />
+    <Image Include="RES\playl4.bmp" />
+    <Image Include="RES\playr1.bmp" />
+    <Image Include="RES\playr2.bmp" />
+    <Image Include="RES\playr3.bmp" />
+    <Image Include="RES\playr4.bmp" />
+    <Image Include="RES\playu1.bmp" />
+    <Image Include="RES\playu2.bmp" />
+    <Image Include="RES\playu3.bmp" />
+    <Image Include="RES\playu4.bmp" />
+    <Image Include="RES\speed.bmp" />
+    <Image Include="RES\start.bmp" />
+    <Image Include="RES\time.bmp" />
+    <Image Include="RES\title.bmp" />
+    <Image Include="RES\top.bmp" />
+    <Image Include="RES\wall.bmp" />
+    <Image Include="RES\wall1.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
