@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "game", "game.vcxproj", "{DD
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Bomberman", "..\Bomberman\Bomberman.vdproj", "{76AD1671-DB3F-4DF3-97E4-A588E5F714FE}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "mygame", "..\mygame\mygame.vdproj", "{C354F670-841D-4ADA-8CDA-92FB8834FC8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -19,6 +21,8 @@ Global
 		{DDD280D7-4B85-4B03-BBC4-C46CA9BECCCB}.Release|Win32.Build.0 = Release|Win32
 		{76AD1671-DB3F-4DF3-97E4-A588E5F714FE}.Debug|Win32.ActiveCfg = Debug
 		{76AD1671-DB3F-4DF3-97E4-A588E5F714FE}.Release|Win32.ActiveCfg = Release
+		{C354F670-841D-4ADA-8CDA-92FB8834FC8D}.Debug|Win32.ActiveCfg = Debug
+		{C354F670-841D-4ADA-8CDA-92FB8834FC8D}.Release|Win32.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

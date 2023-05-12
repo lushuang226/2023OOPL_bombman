@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "Resource.h"
 #include <mmsystem.h>
 #include <ddraw.h>
@@ -51,7 +51,7 @@ namespace game_framework {
 		}
 		if (isAlive == false) {
 			if (bombing == true)
-				CAudio::Instance()->Play(8);		// Õ¨µ¯±¬Õ¨µÄÒôĞ§					
+				CAudio::Instance()->Play(8);		// ç‚¸å¼¹çˆ†ç‚¸çš„éŸ³æ•ˆ					
 			bombing = false;
 
 			if (explode.IsFinalBitmap()) {
@@ -68,27 +68,27 @@ namespace game_framework {
 				explode.OnMove();
 				explode.OnShow();
 
-				for (int i = 0; i < ubomb_level; i++) {							// ÉÏÖĞ²¿»ğÑæµÄÏÔÊ¾Âß¼­
+				for (int i = 0; i < ubomb_level; i++) {							// ä¸Šä¸­éƒ¨ç«ç„°çš„æ˜¾ç¤ºé€»è¾‘
 					up[i]->SetTopLeft(x1 - sx, y1 - (1 + i) * up[i]->Height() - sy);
 					up[i]->OnMove();
 					up[i]->OnShow();
 				}
-				for (int i = 0; i < dbomb_level; i++) {							// ÏÂÖĞ²¿»ğÑæµÄÏÔÊ¾Âß¼­
+				for (int i = 0; i < dbomb_level; i++) {							// ä¸‹ä¸­éƒ¨ç«ç„°çš„æ˜¾ç¤ºé€»è¾‘
 					down[i]->SetTopLeft(x1 -sx, y1 + (1 + i) * down[i]->Height() - sy);
 					down[i]->OnMove();
 					down[i]->OnShow();
 				}
-				for (int i = 0; i < lbomb_level; i++) {							// ×óÖĞ²¿»ğÑæµÄÏÔÊ¾Âß¼­
+				for (int i = 0; i < lbomb_level; i++) {							// å·¦ä¸­éƒ¨ç«ç„°çš„æ˜¾ç¤ºé€»è¾‘
 					left[i]->SetTopLeft(x1 - (float)((1 + i) * left[i]->Width()) - (int)sx, y1 - (int)sy);
 					left[i]->OnMove();
 					left[i]->OnShow();
 				}
-				for (int i = 0; i < rbomb_level; i++) {							// ÓÒÖĞ²¿»ğÑæµÄÏÔÊ¾Âß¼­
+				for (int i = 0; i < rbomb_level; i++) {							// å³ä¸­éƒ¨ç«ç„°çš„æ˜¾ç¤ºé€»è¾‘
 					right[i]->SetTopLeft(x1 + (float)((1 + i) * right[i]->Width()) - (int)sx, y1 - (int)sy);
 					right[i]->OnMove();
 					right[i]->OnShow();
 				}
-				if (!utop || ubomb_level != 0) {							    // ÉÏ¶¥²¿»ğÑæµÄÏÔÊ¾Âß¼­
+				if (!utop || ubomb_level != 0) {							    // ä¸Šé¡¶éƒ¨ç«ç„°çš„æ˜¾ç¤ºé€»è¾‘
 					uptop.SetTopLeft(x1-sx, y1 - (ubomb_level + 1) * up[0]->Height()-sy);
 					uptop.OnMove();
 					uptop.OnShow();
@@ -96,7 +96,7 @@ namespace game_framework {
 				else {
 
 				}
-				if (!dtop || dbomb_level != 0) {							    // ÏÂ¶¥²¿»ğÑæµÄÏÔÊ¾Âß¼­									
+				if (!dtop || dbomb_level != 0) {							    // ä¸‹é¡¶éƒ¨ç«ç„°çš„æ˜¾ç¤ºé€»è¾‘									
 					dowmtop.SetTopLeft(x1-sx, y1 + (dbomb_level + 1) * down[0]->Height()-sy);
 					dowmtop.OnMove();
 					dowmtop.OnShow();
@@ -105,7 +105,7 @@ namespace game_framework {
 
 				}
 
-				if (!rtop || rbomb_level != 0) {							    // ÓÒ¶¥²¿»ğÑæµÄÏÔÊ¾Âß¼­					
+				if (!rtop || rbomb_level != 0) {							    // å³é¡¶éƒ¨ç«ç„°çš„æ˜¾ç¤ºé€»è¾‘					
 					righttop.SetTopLeft(x1 +(rbomb_level + 1) * right[0]->Width()-sx, y1-sy);
 					righttop.OnMove();
 					righttop.OnShow();
@@ -114,7 +114,7 @@ namespace game_framework {
 
 				}
 
-				if (!ltop || lbomb_level != 0) {							    // ×ó¶¥²¿»ğÑæµÄÏÔÊ¾Âß¼­					
+				if (!ltop || lbomb_level != 0) {							    // å·¦é¡¶éƒ¨ç«ç„°çš„æ˜¾ç¤ºé€»è¾‘					
 					lefttop.SetTopLeft(x1 - (lbomb_level + 1) * left[0]->Width()-sx, y1-sy);
 					lefttop.OnMove();
 					lefttop.OnShow();
@@ -126,13 +126,13 @@ namespace game_framework {
 		}
 	}
 
-	void CBomb::SetXY(float x, float y)			// °ÑÕ¨µ¯·ÅÔÚ×î½üµÄ16*16µÄ·½¸ñ×óÉÏ½Ç				
+	void CBomb::SetXY(float x, float y)			// æŠŠç‚¸å¼¹æ”¾åœ¨æœ€è¿‘çš„16*16çš„æ–¹æ ¼å·¦ä¸Šè§’				
 	{
 		this->x = x;
 		this->y = y;
 	}
 
-	void CBomb::ResetAnimation()				// ¶¯»­ÖØÖÃ	
+	void CBomb::ResetAnimation()				// åŠ¨ç”»é‡ç½®	
 	{
 		bomb.Reset();
 		explode.Reset();
@@ -148,47 +148,47 @@ namespace game_framework {
 		lefttop.Reset();
 	}
 
-	bool CBomb::HitRectangleOfBomb(float tx1, float ty1, float tx2, float ty2)	// Õ¨µ¯Ãæ»ı
+	bool CBomb::HitRectangleOfBomb(float tx1, float ty1, float tx2, float ty2)	// ç‚¸å¼¹é¢ç§¯
 	{
 		if (isAlive == true && x != 0) {
-			float x1 = x;													// Õ¨µ¯µÄ×óÉÏ½Çx×ù˜Ë
-			float y1 = y;													// Õ¨µ¯µÄ×óÉÏ½Çy×ù˜Ë
-			float x2 = x + 29;												// Õ¨µ¯µÄÓÒÏÂ½Çx×ù˜Ë
-			float y2 = y + 29;												// Õ¨µ¯µÄÓÒÏÂ½Çy×ù˜Ë					
+			float x1 = x+29;													// ç‚¸å¼¹çš„å·¦ä¸Šè§’xåº§æ¨™
+			float y1 = x+29;													// ç‚¸å¼¹çš„å·¦ä¸Šè§’yåº§æ¨™
+			float x2 = y+29;											// ç‚¸å¼¹çš„å³ä¸‹è§’xåº§æ¨™
+			float y2 =  y+29;												// ç‚¸å¼¹çš„å³ä¸‹è§’yåº§æ¨™					
 			return ((tx2 >= x1 && tx1 <= x2 && ty2 >= y1 && ty1 <= y2));
 		}
 		return false;
 	}
 
-	bool CBomb::HitRectangleOfExplosion(float tx1, float ty1, float tx2, float ty2) // Ö÷ÒªÓÃÓÚÕ¨¹Ö
+	bool CBomb::HitRectangleOfExplosion(float tx1, float ty1, float tx2, float ty2) // ä¸»è¦ç”¨äºç‚¸æ€ª
 	{
 		if (isAlive == false && !isEnd) {
-			float x1 = x + 4;												// Õ¨µ¯ÊúÏò»ğÑæµÄ×óÉÏ½Çx×ù˜Ë
-			float y1 = y - (ubomb_level + 1) * 32 + 3;						// Õ¨µ¯ÊúÏò»ğÑæµÄ×óÉÏ½Çy×ù˜Ë
-			float x2 = x + 28;												// Õ¨µ¯ÊúÏò»ğÑæµÄÓÒÏÂ½Çx×ù˜Ë
-			float y2 = y + 29 + (dbomb_level + 1) * 32;						// Õ¨µ¯ÊúÏò»ğÑæµÄÓÒÏÂ½Çy×ù˜Ë	
-			float x_1 = x - (lbomb_level + 1) * 32;							// Õ¨µ¯ºáÏò»ğÑæµÄ×óÉÏ½Çx×ù˜Ë
-			float y_1 = y + 4;												// Õ¨µ¯ºáÏò»ğÑæµÄ×óÉÏ½Çy×ù˜Ë
-			float x_2 = x + 29 + (rbomb_level + 1) * 32;					// Õ¨µ¯ºáÏò»ğÑæµÄÓÒÏÂ½Çx×ù˜Ë
-			float y_2 = y + 29;												// Õ¨µ¯ºáÏò»ğÑæµÄÓÒÏÂ½Çy×ù˜Ë
+			float x1 = x + 4;												// ç‚¸å¼¹ç«–å‘ç«ç„°çš„å·¦ä¸Šè§’xåº§æ¨™
+			float y1 = y - (ubomb_level + 1) * 32 + 3;						// ç‚¸å¼¹ç«–å‘ç«ç„°çš„å·¦ä¸Šè§’yåº§æ¨™
+			float x2 = x + 28;												// ç‚¸å¼¹ç«–å‘ç«ç„°çš„å³ä¸‹è§’xåº§æ¨™
+			float y2 = y + 29 + (dbomb_level + 1) * 32;						// ç‚¸å¼¹ç«–å‘ç«ç„°çš„å³ä¸‹è§’yåº§æ¨™	
+			float x_1 = x - (lbomb_level + 1) * 32;							// ç‚¸å¼¹æ¨ªå‘ç«ç„°çš„å·¦ä¸Šè§’xåº§æ¨™
+			float y_1 = y + 4;												// ç‚¸å¼¹æ¨ªå‘ç«ç„°çš„å·¦ä¸Šè§’yåº§æ¨™
+			float x_2 = x + 29 + (rbomb_level + 1) * 32;					// ç‚¸å¼¹æ¨ªå‘ç«ç„°çš„å³ä¸‹è§’xåº§æ¨™
+			float y_2 = y + 29;												// ç‚¸å¼¹æ¨ªå‘ç«ç„°çš„å³ä¸‹è§’yåº§æ¨™
 			return ((tx2 >= x1 && tx1 <= x2 && ty2 >= y1 && ty1 <= y2) || (tx2 >= x_1 && tx1 <= x_2 && ty2 >= y_1 && ty1 <= y_2));
 		}
 		return false;
 
 	}
 
-	bool CBomb::HitRectangleOfExplosion(float tx1, float ty1, float tx2, float ty2, vector<pair<float, float>> eswalls) // Ö÷ÒªÓÃÓÚÕ¨Ç½
+	bool CBomb::HitRectangleOfExplosion(float tx1, float ty1, float tx2, float ty2, vector<pair<float, float>> eswalls) // ä¸»è¦ç”¨äºç‚¸å¢™
 	{
 		if (isAlive == false && !isEnd) {
 
-			float x1 = x + 4;												// Õ¨µ¯ÊúÏò»ğÑæµÄ×óÉÏ½Çx×ù˜Ë
-			float y1 = y - (ubomb_level + 1) * 32 + 3;					// Õ¨µ¯ÊúÏò»ğÑæµÄ×óÉÏ½Çy×ù˜Ë
-			float x2 = x + 28;											// Õ¨µ¯ÊúÏò»ğÑæµÄÓÒÏÂ½Çx×ù˜Ë
-			float y2 = y + 29 + (dbomb_level + 1) * 32;					// Õ¨µ¯ÊúÏò»ğÑæµÄÓÒÏÂ½Çy×ù˜Ë	
-			float x_1 = x - (lbomb_level + 1) * 32 + 3 ;						// Õ¨µ¯ºáÏò»ğÑæµÄ×óÉÏ½Çx×ù˜Ë
-			float y_1 = y + 4;											// Õ¨µ¯ºáÏò»ğÑæµÄ×óÉÏ½Çy×ù˜Ë
-			float x_2 = x + 29 + (rbomb_level + 1) * 32;					// Õ¨µ¯ºáÏò»ğÑæµÄÓÒÏÂ½Çx×ù˜Ë
-			float y_2 = y + 29;											// Õ¨µ¯ºáÏò»ğÑæµÄÓÒÏÂ½Çy×ù˜Ë
+			float x1 = x + 4;												// ç‚¸å¼¹ç«–å‘ç«ç„°çš„å·¦ä¸Šè§’xåº§æ¨™
+			float y1 = y - (ubomb_level + 1) * 32 + 3;					// ç‚¸å¼¹ç«–å‘ç«ç„°çš„å·¦ä¸Šè§’yåº§æ¨™
+			float x2 = x + 28;											// ç‚¸å¼¹ç«–å‘ç«ç„°çš„å³ä¸‹è§’xåº§æ¨™
+			float y2 = y + 29 + (dbomb_level + 1) * 32;					// ç‚¸å¼¹ç«–å‘ç«ç„°çš„å³ä¸‹è§’yåº§æ¨™	
+			float x_1 = x - (lbomb_level + 1) * 32 + 3 ;						// ç‚¸å¼¹æ¨ªå‘ç«ç„°çš„å·¦ä¸Šè§’xåº§æ¨™
+			float y_1 = y + 4;											// ç‚¸å¼¹æ¨ªå‘ç«ç„°çš„å·¦ä¸Šè§’yåº§æ¨™
+			float x_2 = x + 29 + (rbomb_level + 1) * 32;					// ç‚¸å¼¹æ¨ªå‘ç«ç„°çš„å³ä¸‹è§’xåº§æ¨™
+			float y_2 = y + 29;											// ç‚¸å¼¹æ¨ªå‘ç«ç„°çš„å³ä¸‹è§’yåº§æ¨™
 			if (rbomb_level == 0 && !rtop && rbomb_level != bomb_level)
 				x_2 = x + 32 + 32;
 			if (rbomb_level == 0 && rtop && rbomb_level != bomb_level)
@@ -258,15 +258,15 @@ namespace game_framework {
 		return false;
 	}
 
-	void CBomb::SetFire(vector<pair<float, float>> walls)					// ÉèÖÃ»ğÑæ´óĞ¡
+	void CBomb::SetFire(vector<pair<float, float>> walls)					// è®¾ç½®ç«ç„°å¤§å°
 	{
 		if (isAlive == false && !isEnd) {
 			for (int i = 0; i <= bomb_level; i++)
 			{
-				float x1 = x + 26;											// Õ¨µ¯ÊúÏò»ğÑæÉÏ°ë²¿·ÖµÄ×óÉÏ½Çx×ù˜Ë
-				float y1 = y - (i + 1) * 32;								// Õ¨µ¯ÊúÏò»ğÑæÉÏ°ë²¿·ÖµÄ×óÉÏ½Çy×ù˜Ë
-				float x2 = x + 29;											// Õ¨µ¯ÊúÏò»ğÑæÉÏ°ë²¿·ÖµÄÓÒÏÂ½Çx×ù˜Ë
-				float y2 = y;												// Õ¨µ¯ÊúÏò»ğÑæÉÏ°ë²¿·ÖµÄÓÒÏÂ½Çy×ù˜Ë	
+				float x1 = x + 26;											// ç‚¸å¼¹ç«–å‘ç«ç„°ä¸ŠåŠéƒ¨åˆ†çš„å·¦ä¸Šè§’xåº§æ¨™
+				float y1 = y - (i + 1) * 32;								// ç‚¸å¼¹ç«–å‘ç«ç„°ä¸ŠåŠéƒ¨åˆ†çš„å·¦ä¸Šè§’yåº§æ¨™
+				float x2 = x + 29;											// ç‚¸å¼¹ç«–å‘ç«ç„°ä¸ŠåŠéƒ¨åˆ†çš„å³ä¸‹è§’xåº§æ¨™
+				float y2 = y;												// ç‚¸å¼¹ç«–å‘ç«ç„°ä¸ŠåŠéƒ¨åˆ†çš„å³ä¸‹è§’yåº§æ¨™	
 				if (ubomb_level == bomb_level) {
 					for (size_t  j = 0; j < walls.size(); j++)
 					{
@@ -279,10 +279,10 @@ namespace game_framework {
 						}
 					}
 				}
-				x1 = x + 26;											// Õ¨µ¯ÊúÏò»ğÑæÏÂ°ë²¿·ÖµÄ×óÉÏ½Çx×ù˜Ë
-				y1 = y + 29;											// Õ¨µ¯ÊúÏò»ğÑæÏÂ°ë²¿·ÖµÄ×óÉÏ½Çy×ù˜Ë
-				x2 = x + 29;											// Õ¨µ¯ÊúÏò»ğÑæÏÂ°ë²¿·ÖµÄÓÒÏÂ½Çx×ù˜Ë
-				y2 = y + 32 + (i + 1) * 32;								// Õ¨µ¯ÊúÏò»ğÑæÏÂ°ë²¿·ÖµÄÓÒÏÂ½Çy×ù˜Ë	
+				x1 = x + 26;											// ç‚¸å¼¹ç«–å‘ç«ç„°ä¸‹åŠéƒ¨åˆ†çš„å·¦ä¸Šè§’xåº§æ¨™
+				y1 = y + 29;											// ç‚¸å¼¹ç«–å‘ç«ç„°ä¸‹åŠéƒ¨åˆ†çš„å·¦ä¸Šè§’yåº§æ¨™
+				x2 = x + 29;											// ç‚¸å¼¹ç«–å‘ç«ç„°ä¸‹åŠéƒ¨åˆ†çš„å³ä¸‹è§’xåº§æ¨™
+				y2 = y + 32 + (i + 1) * 32;								// ç‚¸å¼¹ç«–å‘ç«ç„°ä¸‹åŠéƒ¨åˆ†çš„å³ä¸‹è§’yåº§æ¨™	
 				if (dbomb_level == bomb_level) {
 					for (size_t  k = 0; k < walls.size(); k++)
 					{
@@ -295,10 +295,10 @@ namespace game_framework {
 						}
 					}
 				}
-				x1 = x - (i + 1) * 32;									// Õ¨µ¯ºáÏò»ğÑæ×ó°ë²¿·ÖµÄ×óÉÏ½Çx×ù˜Ë
-				y1 = y + 26;											// Õ¨µ¯ºáÏò»ğÑæ×ó°ë²¿·ÖµÄ×óÉÏ½Çy×ù˜Ë
-				x2 = x;													// Õ¨µ¯ºáÏò»ğÑæ×ó°ë²¿·ÖµÄÓÒÏÂ½Çx×ù˜Ë
-				y2 = y + 29;											// Õ¨µ¯ºáÏò»ğÑæ×ó°ë²¿·ÖµÄÓÒÏÂ½Çy×ù˜Ë
+				x1 = x - (i + 1) * 32;									// ç‚¸å¼¹æ¨ªå‘ç«ç„°å·¦åŠéƒ¨åˆ†çš„å·¦ä¸Šè§’xåº§æ¨™
+				y1 = y + 26;											// ç‚¸å¼¹æ¨ªå‘ç«ç„°å·¦åŠéƒ¨åˆ†çš„å·¦ä¸Šè§’yåº§æ¨™
+				x2 = x;													// ç‚¸å¼¹æ¨ªå‘ç«ç„°å·¦åŠéƒ¨åˆ†çš„å³ä¸‹è§’xåº§æ¨™
+				y2 = y + 29;											// ç‚¸å¼¹æ¨ªå‘ç«ç„°å·¦åŠéƒ¨åˆ†çš„å³ä¸‹è§’yåº§æ¨™
 				if (lbomb_level == bomb_level) {
 					for (size_t  m = 0; m < walls.size(); m++)
 					{
@@ -311,10 +311,10 @@ namespace game_framework {
 						}
 					}
 				}
-				x1 = x + 29;											// Õ¨µ¯ºáÏò»ğÑæÓÒ°ë²¿·ÖµÄ×óÉÏ½Çx×ù˜Ë
-				y1 = y + 26;											// Õ¨µ¯ºáÏò»ğÑæÓÒ°ë²¿·ÖµÄ×óÉÏ½Çy×ù˜Ë
-				x2 = x + 32 + (i + 1) * 32;								// Õ¨µ¯ºáÏò»ğÑæÓÒ°ë²¿·ÖµÄÓÒÏÂ½Çx×ù˜Ë
-				y2 = y + 29;											// Õ¨µ¯ºáÏò»ğÑæÓÒ°ë²¿·ÖµÄÓÒÏÂ½Çy×ù˜Ë	
+				x1 = x + 29;											// ç‚¸å¼¹æ¨ªå‘ç«ç„°å³åŠéƒ¨åˆ†çš„å·¦ä¸Šè§’xåº§æ¨™
+				y1 = y + 26;											// ç‚¸å¼¹æ¨ªå‘ç«ç„°å³åŠéƒ¨åˆ†çš„å·¦ä¸Šè§’yåº§æ¨™
+				x2 = x + 32 + (i + 1) * 32;								// ç‚¸å¼¹æ¨ªå‘ç«ç„°å³åŠéƒ¨åˆ†çš„å³ä¸‹è§’xåº§æ¨™
+				y2 = y + 29;											// ç‚¸å¼¹æ¨ªå‘ç«ç„°å³åŠéƒ¨åˆ†çš„å³ä¸‹è§’yåº§æ¨™	
 				if (rbomb_level == bomb_level) {
 					for (size_t  n = 0; n < walls.size(); n++)
 					{

@@ -1,4 +1,4 @@
-#ifndef CPROPS_H
+ï»¿#ifndef CPROPS_H
 #define CPROPS_H
 #include "CPlayer.h"
 #include "CMonster.h"
@@ -10,105 +10,105 @@ namespace game_framework {
 	{
 	public:
 		CProps();
-		bool IsAlive();															// ÊÇ·ñ»îÖø
-		void SetXY(float nx, float ny);											// ÔO¶¨×ù˜Ë
-		void SetIsAlive(bool alive);											// ÔO¶¨ÊÇ·ñ»îÖø
-		bool HitRectangle(CPlayer *player, vector<pair<float, float>> eswalls);	// ÊÇ·ñÅöµ½…¢”µ¹ ‡úµÄ¾ØĞÎ
-		bool HitRectangles(float tx1, float ty1, float tx2, float ty2);			// ÊÇ·ñÅöµ½…¢”µ¹ ‡úµÄ¾ØĞÎ
-		float  GetX1();															// »ñÈ¡×óÉÏ½Ç x ×ù˜Ë
-		float  GetY1();															// »ñÈ¡×óÉÏ½Ç y ×ù˜Ë
-		float  GetX2();															// ²Á×ÓÓÒÏÂ½Ç x ×ù˜Ë
-		float  GetY2();															// ²Á×ÓÓÒÏÂ½Ç y ×ù˜Ë
+		bool IsAlive();															// æ˜¯å¦æ´»è‘—
+		void SetXY(float nx, float ny);											// è¨­å®šåº§æ¨™
+		void SetIsAlive(bool alive);											// è¨­å®šæ˜¯å¦æ´»è‘—
+		bool HitRectangle(CPlayer *player, vector<pair<float, float>> eswalls);	// æ˜¯å¦ç¢°åˆ°åƒæ•¸ç¯„åœçš„çŸ©å½¢
+		bool HitRectangles(float tx1, float ty1, float tx2, float ty2);			// æ˜¯å¦ç¢°åˆ°åƒæ•¸ç¯„åœçš„çŸ©å½¢
+		float  GetX1();															// è·å–å·¦ä¸Šè§’ x åº§æ¨™
+		float  GetY1();															// è·å–å·¦ä¸Šè§’ y åº§æ¨™
+		float  GetX2();															// æ“¦å­å³ä¸‹è§’ x åº§æ¨™
+		float  GetY2();															// æ“¦å­å³ä¸‹è§’ y åº§æ¨™
 	protected:
-		float x, y;																// ×ù˜Ë
-		bool is_alive;															// ÊÇ·ñ»îÖø		
+		float x, y;																// åº§æ¨™
+		bool is_alive;															// æ˜¯å¦æ´»è‘—		
 	};
-	// ======================================ÃÅ================================================
+	// ======================================é—¨================================================
 	class CDoor :public CProps 
 	{
 	public:
-		bool HitRectangleFromDoor(CPlayer *player, CGMap *gamemap, vector<pair<float, float>> eswalls, CMonster *monster);		// Åöµ½ÃÅÇĞÏÂÒ»¹ØÇ°ÌáÊÇËùÓĞ¹ÖÉ±Íê
-		void LoadBitmap();																										// İdÈëÍ¼ĞÎ	
-		void OnShow(float sx, float sy);																						// ÙNµ½®‹Ãæ
-		void ChangePass(CPlayer *player, CGMap *gamemap, bool flag);															// ÇĞ¹Ø¹¦ÄÜ
+		bool HitRectangleFromDoor(CPlayer *player, CGMap *gamemap, vector<pair<float, float>> eswalls, CMonster *monster);		// ç¢°åˆ°é—¨åˆ‡ä¸‹ä¸€å…³å‰ææ˜¯æ‰€æœ‰æ€ªæ€å®Œ
+		void LoadBitmap();																										// è¼‰å…¥å›¾å½¢	
+		void OnShow(float sx, float sy);																						// è²¼åˆ°ç•«é¢
+		void ChangePass(CPlayer *player, CGMap *gamemap, bool flag);															// åˆ‡å…³åŠŸèƒ½
 	protected:
 		CMovingBitmap door;				
 	};
-	// ======================================¼ÓËÙ================================================
+	// ======================================åŠ é€Ÿ================================================
 	class CSpeed :public CProps
 	{
 	public:
-		bool HitRectangleFromSpeed(CPlayer *player, vector<pair<float, float>> eswalls);										// Åöµ½¼ÓËÙµÀ¾ß»áÊ¹ÈËÎïËÙ¶ÈÔö¼Ó50%
+		bool HitRectangleFromSpeed(CPlayer *player, vector<pair<float, float>> eswalls);										// ç¢°åˆ°åŠ é€Ÿé“å…·ä¼šä½¿äººç‰©é€Ÿåº¦å¢åŠ 50%
 		void LoadBitmap();
 		void OnShow(float sx, float sy);
 	protected:
 		CMovingBitmap speed;					
 	};
-	// ======================================¼ÓÕ¨µ¯Êı================================================
+	// ======================================åŠ ç‚¸å¼¹æ•°================================================
 	class CBombnum :public CProps																								
 	{
 	public:
-		bool HitRectangleFromBombNum(CPlayer *player, vector<pair<float, float>> eswalls);										// Åöµ½¼ÓÕ¨µ¯µÀ¾ß»áÊ¹ÈËÎïĞ¯´øÕ¨µ¯Êı+1
+		bool HitRectangleFromBombNum(CPlayer *player, vector<pair<float, float>> eswalls);										// ç¢°åˆ°åŠ ç‚¸å¼¹é“å…·ä¼šä½¿äººç‰©æºå¸¦ç‚¸å¼¹æ•°+1
 		void LoadBitmap();
 		void OnShow(float sx, float sy);
 	protected:
 		CMovingBitmap bombnum;				
 	};
-	// ======================================¼ÓÍşÁ¦================================================
+	// ======================================åŠ å¨åŠ›================================================
 	class CBombpow :public CProps
 	{
 	public:
-		bool HitRectangleFromBombPow(CPlayer *player, vector<pair<float, float>> eswalls);										// Åöµ½¼ÓÍşÁ¦µÀ¾ß»áÊ¹ÈËÎïÕ¨µ¯ÍşÁ¦+1
+		bool HitRectangleFromBombPow(CPlayer *player, vector<pair<float, float>> eswalls);										// ç¢°åˆ°åŠ å¨åŠ›é“å…·ä¼šä½¿äººç‰©ç‚¸å¼¹å¨åŠ›+1
 		void LoadBitmap();
 		void OnShow(float sx, float sy);
 	protected:
 		CMovingBitmap bombpow;			
 	};
-	// ======================================´©Ç½================================================
+	// ======================================ç©¿å¢™================================================
 	class CCrossWall :public CProps
 	{
 	public:
-		bool HitRectangleFromCrossWalls(CPlayer *player, vector<pair<float, float>> eswalls);									// Åöµ½´©Ç½µÀ¾ß»áÊ¹ÈËÎï½øÈë´©Ç½×´Ì¬
+		bool HitRectangleFromCrossWalls(CPlayer *player, vector<pair<float, float>> eswalls);									// ç¢°åˆ°ç©¿å¢™é“å…·ä¼šä½¿äººç‰©è¿›å…¥ç©¿å¢™çŠ¶æ€
 		void LoadBitmap();
 		void OnShow(float sx, float sy);
 	protected:
 		CMovingBitmap crosswall;
 	};
-	// ======================================´©Õ¨µ¯================================================
+	// ======================================ç©¿ç‚¸å¼¹================================================
 	class CCrossBomb :public CProps
 	{
 	public:
-		bool HitRectangleFromCrossBomb(CPlayer *player, vector<pair<float, float>> eswalls);									// Åöµ½´©Õ¨µ¯µÀ¾ß»áÊ¹ÈËÎï½øÈë´©Õ¨µ¯×´Ì¬
+		bool HitRectangleFromCrossBomb(CPlayer *player, vector<pair<float, float>> eswalls);									// ç¢°åˆ°ç©¿ç‚¸å¼¹é“å…·ä¼šä½¿äººç‰©è¿›å…¥ç©¿ç‚¸å¼¹çŠ¶æ€
 		void LoadBitmap();
 		void OnShow(float sx, float sy);
 	protected:
 		CMovingBitmap crossbomb;
 	};
-	// ======================================¿ØÖÆÕ¨µ¯================================================
+	// ======================================æ§åˆ¶ç‚¸å¼¹================================================
 	class CControl :public CProps
 	{
 	public:
-		bool HitRectangleFromBombControl(CPlayer *player, vector<pair<float, float>> eswalls);									// Åöµ½¿ØÖÆÕ¨µ¯µÀ¾ß»áÊ¹ÈËÎï½øÈë¿ÉÒı±¬Õ¨µ¯×´Ì¬
+		bool HitRectangleFromBombControl(CPlayer *player, vector<pair<float, float>> eswalls);									// ç¢°åˆ°æ§åˆ¶ç‚¸å¼¹é“å…·ä¼šä½¿äººç‰©è¿›å…¥å¯å¼•çˆ†ç‚¸å¼¹çŠ¶æ€
 		void LoadBitmap();
 		void OnShow(float sx, float sy);
 	protected:
 		CMovingBitmap control;
 	};
-	// ======================================ÎŞµĞ================================================
+	// ======================================æ— æ•Œ================================================
 	class CMissAll :public CProps
 	{
 	public:
-		bool HitRectangleFromMissAll(CPlayer *player, vector<pair<float, float>> eswalls);										// Åöµ½ÎŞµĞµÀ¾ß»áÊ¹ÈËÎï½øÈëÎŞµĞ×´Ì¬
+		bool HitRectangleFromMissAll(CPlayer *player, vector<pair<float, float>> eswalls);										// ç¢°åˆ°æ— æ•Œé“å…·ä¼šä½¿äººç‰©è¿›å…¥æ— æ•ŒçŠ¶æ€
 		void LoadBitmap();
 		void OnShow(float sx, float sy);
 	protected:
 		CMovingBitmap missall;
 	};
-	// ======================================ÎŞÊÓ»ğÑæ================================================
+	// ======================================æ— è§†ç«ç„°================================================
 	class CMissFire :public CProps
 	{
 	public:
-		bool HitRectangleFromMissFire(CPlayer *player, vector<pair<float, float>> eswalls);										// Åöµ½ÎŞÊÓ»ğÑæµÀ¾ß»áÊ¹ÈËÎï½øÈëÎŞÊÓ»ğÑæ×´Ì¬
+		bool HitRectangleFromMissFire(CPlayer *player, vector<pair<float, float>> eswalls);										// ç¢°åˆ°æ— è§†ç«ç„°é“å…·ä¼šä½¿äººç‰©è¿›å…¥æ— è§†ç«ç„°çŠ¶æ€
 		void LoadBitmap();
 		void OnShow(float sx, float sy);
 	protected:

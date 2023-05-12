@@ -94,6 +94,7 @@
     <None Include="res\Toolbar.bmp">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="Sounds\ntut.mid" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\audio.cpp">
@@ -606,5 +607,23 @@
     <Image Include="RES\enemy39.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Sounds\Title_Screen.mp3" />
+    <Media Include="Sounds\Stage_Theme.mp3" />
+    <Media Include="Sounds\Stage_Start.mp3" />
+    <Media Include="Sounds\Stage_Complete.mp3" />
+    <Media Include="Sounds\setbomb.mp3" />
+    <Media Include="Sounds\mouse.mp3" />
+    <Media Include="Sounds\lake.mp3" />
+    <Media Include="Sounds\Life_Lost.mp3" />
+    <Media Include="Sounds\Invincibility.mp3" />
+    <Media Include="Sounds\bomb.mp3" />
+    <Media Include="Sounds\Bonus_Stage.mp3" />
+    <Media Include="Sounds\ding.wav" />
+    <Media Include="Sounds\EAT.mp3" />
+    <Media Include="Sounds\Find_The Exit.mp3" />
+    <Media Include="Sounds\hit.mp3" />
+    <Media Include="Sounds\Game_Over.mp3" />
   </ItemGroup>
 </Project>

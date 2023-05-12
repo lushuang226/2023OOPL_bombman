@@ -99,7 +99,7 @@ namespace game_framework {
 	public:
 		CGameStateOver(CGame *g);
 		void OnBeginState();							// 設定每次重玩所需的變數
-		void OnInit();									
+		void OnInit();
 		void OnKeyUp(UINT, UINT, UINT);					// 键盘放开的动作		
 		static void SetSuccess();						// 通关成功
 		static void SetFail();							// 通关失败

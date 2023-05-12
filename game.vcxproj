@@ -266,6 +266,7 @@
     <None Include="RES\loading.bmp" />
     <None Include="RES\ntutcsie.bmp" />
     <None Include="res\Toolbar.bmp" />
+    <None Include="Sounds\ntut.mid" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\audio.cpp" />
@@ -482,6 +483,24 @@
     <Image Include="RES\top.bmp" />
     <Image Include="RES\wall.bmp" />
     <Image Include="RES\wall1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Sounds\bomb.mp3" />
+    <Media Include="Sounds\Bonus_Stage.mp3" />
+    <Media Include="Sounds\ding.wav" />
+    <Media Include="Sounds\EAT.mp3" />
+    <Media Include="Sounds\Find_The Exit.mp3" />
+    <Media Include="Sounds\Game_Over.mp3" />
+    <Media Include="Sounds\hit.mp3" />
+    <Media Include="Sounds\Invincibility.mp3" />
+    <Media Include="Sounds\lake.mp3" />
+    <Media Include="Sounds\Life_Lost.mp3" />
+    <Media Include="Sounds\mouse.mp3" />
+    <Media Include="Sounds\setbomb.mp3" />
+    <Media Include="Sounds\Stage_Complete.mp3" />
+    <Media Include="Sounds\Stage_Start.mp3" />
+    <Media Include="Sounds\Stage_Theme.mp3" />
+    <Media Include="Sounds\Title_Screen.mp3" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

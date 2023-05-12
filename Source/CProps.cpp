@@ -117,7 +117,7 @@ namespace game_framework {
 			player->SetBombNum(bombnum);				
 			gamemap->ClearnCorrdinates();				
 			gamemap->InitializeForRestart();
-			gamemap->SetLevel(gamemap->GetLevel() );	
+			gamemap->SetLevel(gamemap->GetLevel() +1);	
 			gamemap->SwitchingMap();					
 			gamemap->SetIsCutFigure(true);				
 			gamemap->SetStart(time(NULL));	
