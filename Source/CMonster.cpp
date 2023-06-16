@@ -38,9 +38,10 @@ namespace game_framework {
 		float y1 = y ;				// 球的左上角y座標 
 		float x2 = x1 + 28;	// 球的右下角x座標
 		float y2 = y1 + 28;	// 球的右下角y座標									
-									// 檢測球的矩形與參數矩形是否有交集								
+									// 檢測球的矩形與參數矩形是否有交集				 				
 		return (tx2 >= x1 && tx1 <= x2 && ty2 >= y1 && ty1 <= y2);
-	}
+	} 
+
 
 	int CMonster::GetRandomNum()
 	{
